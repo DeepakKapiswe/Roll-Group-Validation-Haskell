@@ -1,0 +1,27 @@
+[se1 assignment validation 2
+
+[subject - SE1-17-VALIDATION-SIMPLE]
+[deadline - 16/01/2017]
+[attachment - [
+a single file [rollno].tar.gz containing things specified in the assignment text. 
+]]
+
+[assignment text - [
+
+you may meet me if you have any doubts about this assignment.
+]
+ [
+ write a program to validate the student project group information as discussed in the class
+ to check the rules
+  - maximum 3 group members
+  - everybody should be a member of exactly one group
+  - all members of a group should agree to make the group valid 
+  - a student can send multiple submissions [e.g. to correct errors in the previous mails, or just by mistake]; any one of these submissions is sufficient if found valid
+
+ ]
+ your program should take input from a single file and output should be written to a file [name of the input/output files should be taken as cmd line parameters]
+
+see the sample input files [groups01*.txt] in the repo.
+
+]
+]

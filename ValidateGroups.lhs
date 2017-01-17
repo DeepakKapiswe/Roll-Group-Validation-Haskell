@@ -5,7 +5,6 @@
 > import qualified Data.Map as M
 > import qualified Data.Text as T
 
-
 > data Group = Group {applier::Int,memberList::[Int]} deriving (Eq,Ord)
 > instance Show Group where
 >  show= show.sort.groupMembers
@@ -47,15 +46,19 @@
 > isIsomorphic::Group->Group->Bool
 > isIsomorphic x y = let [x',y'] = (sort.groupMembers)<$>[x,y]
 >                    in x'==y'
-
+> -- | validate a particular group by size whether all group members agree or not
+> --   with the help of the hypothesis that if we have a group of n members then we
+> --   must have atleast n isomorphic groups present with different applier
 > validateAllMembersAgree::Int->[Group]->[Group]
 > validateAllMembersAgree size xs = [x|x<-xs,(length.filter (isIsomorphic x)$xs)==size]
+
 
 > separateNotAgreeingGroups::Int->[Group]->([Group],[Group])
 > separateNotAgreeingGroups size groupList = let valids = validateAllMembersAgree size groupList
 >                                                invalids = groupList \\ valids
 >                                            in  (valids,invalids)
 
+> -- | generates the zip of occurences of a particular member 
 > generateCountList::[Group]->[(RollNum,Int)]
 > generateCountList = M.toAscList.M.fromListWith (+).((\x->(x,1))<$>).mconcat.(groupMembers <$>)
 
@@ -74,6 +77,8 @@
 >                              nonConflictingGroups =[y|y<-xs,getGroupFamily y xs ==[]]
 >                          in (nonConflictingGroups,conflictingGroups)
 
+> -- | calculates the loss quantised in terms of rollno we are lossing if we select a particular
+> --   group from a list of groups
 > calculateLoss::[Group]->Group->Int
 > calculateLoss groupList g = let countList = generateCountList groupList
 >                                 membersInDangerCountList = filter (\(r,c)->elem r membersInDanger) countList
@@ -81,6 +86,12 @@
 >                             in length.filter (\(r,c)->c<1).M.toList$foldr (\(a,b)->M.insertWith (\x y->y-x) a b) (M.fromList membersInDangerCountList)$ (\x->(x,1))<$>  membersInDanger
 >
 
+> -- | The core function to resolve conflicts when a rollno appears in different groups
+> --   it first finds the family of groups in which the given rollno is a member then calculates
+> --   or compares the associated loss with the choices if that is going to be selected
+> --   if any of the loss is 0 then that particular choice would get selected else the choice with
+> --   minimum loss would be selected and also if multiple choices have same loss differnt from 0 
+> --   then we can't solve the conflict arbitrarily we would say it inconsistent
 > conFlictResolution::[Group]->[Group]->[([Group],String)]->([Group],[([Group],String)])
 > conFlictResolution [] valids conflicts = (valids,conflicts)
 > conFlictResolution (e:es) valids conflicts = case getGroupFamily e (e:es) of
@@ -89,6 +100,8 @@
 >              Nothing -> conFlictResolution (es \\ gFamily) valids (((e:gFamily),"Can't Resolve The Conflict Between Groups due to multiple presence of the same member"):conflicts )
 >              Just (selected,toBeDiscarded) -> conFlictResolution ((e:es) \\ (selected:toBeDiscarded)) (selected:valids) ((toBeDiscarded,"Conflicting Groups Discarded in favour of " <> show selected):conflicts)
 
+
+> -- | Checks whether the group family have consistent solution or not as described above
 > isConsistent::[Group]->[Group]->Maybe (Group,[Group])
 > isConsistent gFamily gList = case (sortOn fst$(\x->(calculateLoss gList x,x))<$> gFamily) of
 >  (0,choice1):xs -> Just (choice1,filter (isIntersectingGroup choice1).delete choice1 $gList)
@@ -96,6 +109,7 @@
 >  (x,choice1):xs -> Just (choice1,filter (isIntersectingGroup choice1).delete choice1 $gList)
 >
 
+> -- | validateGroups applies whole logic to the input String
 > validateGroups::String-> IO String
 > validateGroups inputStr= do
 >  let groupList = makeGroupList inputStr

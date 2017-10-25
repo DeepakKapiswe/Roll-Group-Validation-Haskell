@@ -1,0 +1,234 @@
+#
+15144.txt (rollno, 15144)
+(group members, [15129,15144])
+#
+15150.txt (rollno, 15150)
+  (group members, [15126])
+#
+15106.txt [
+  (rollno,15106)
+  (group members,[15106])
+#
+15105.txt (rollno , 15105)
+(group members, rollno , 15131)
+(group members, rollno , 15123)
+(group members, rollno , 15116)
+#
+15126.txt (rollno,15126)
+(group members, [15126,15150])
+#
+14145.txt roll no, 14145
+group members, 14145, 15125
+#
+15125.txt roll no, 15125
+group members, 15125, 14145
+#
+15149.txt rollno,15149
+group member,[15149,15113,15119]
+#
+15113.txt rollno , 15113
+group members , [15113,15149,15119]
+#
+15119.txt rollno,15119
+group members,[15119,15113,15149]
+#
+15137.txt rollno, 15137
+group members, 15109,15101
+#
+15228.txt [
+ (rollno,15228)
+ (group members,15153)
+#
+15153.txt [
+ (rollno,15153)
+ (group members,15228)
+#
+15141.txt (rollno,<15141>)
+(group members,[<15134>])
+#
+15118.txt rollno   <15118>
+group members <15157>
+#
+14111.txt [
+ (rollno,14111)
+ (group members, [14102 ,14111 ,14116])
+#
+15157.txt rollno       <15157>
+group members <15118>
+#
+15134.txt (rollno,<15134>)
+(group members,[<15141>])
+#
+14131.txt [
+  (rollno, 14131)
+  (group members, [14128])
+#
+14128.txt [
+  (rollno,14128)
+  (group members,[14131])
+#
+15143.txt [
+  (rollno,15143)
+  (group members, [15145])
+#
+15152.txt rollno-15152
+group members-15103
+#
+15103.txt rollno-15103
+group members-15103,15152
+#
+13110.txt  [
+  (rollno, 13110)
+  (group members, [14149])
+#
+15155.txt rollno, 15155
+group members, 15155,15128
+#
+15128.txt rollno, 15128
+group members, 15128,15155
+#
+14149.txt [
+  (rollno, 14149)
+  (group members, [13110])
+#
+15131.txt (rollno , 15131)
+(group members, rollno , 15105)
+(group members, rollno , 15116)
+#
+15116.txt (rollno , 15105)
+(group members, rollno , 15131)
+(group members, rollno , 15116)
+#
+15116.txt Roll no, 15116 
+Group members, 15105, 15131
+#
+15139.txt 
+Roll no,15139
+Group members, 15133, 15124
+#
+15133.txt rollno,15133
+group members, 15124, 15139
+#
+15124.txt rollno,15124
+group members, 15133, 15139
+#
+15145.txt [
+ (rollno, 15145)
+ (group members,[15143])
+#
+[15127].txt [
+  (rollno, 15127)
+  (group members, [15120])
+#
+[15120].txt [
+  (rollno, 15120)
+  (group members, [15127])
+#
+14113.txt (rollno, 14113) 
+(group members, [14112])
+#
+15109.txt Roll Number = 15109
+Group Members =15101
+#
+15101.txt Roll Number = 15101
+Group Members =15109
+#
+14102.txt [
+ (rollno,14102)
+ (group members, [14102 ,14111 ,14116])
+#
+14102.txt [
+ (rollno,14102)
+ (group members, [14102 ,14111 ,14116])
+#
+14116.txt [
+ (rollno,14116)
+ (group members, [14102 ,14111 ,14116])
+#
+14116.txt [
+ (rollno,14116)
+ (group members, [14102 ,14111 ,14116])
+#
+14112.txt (rollno, 14112) 
+(group members, [14113])
+#
+14124.txt   (rollno,14124)
+  (group members,15121)
+#
+15154.txt [(rollno, 15154),
+  group members, [15111 ,15108])
+#
+15108.txt ([roll-No - 15108),
+(group members , 15154,15111])
+#
+15111.txt [(rollno, 15111),
+  (group members, [15154 ,15108])
+#
+15121.txt   (rollno,15121)
+  (group members,14124)
+#
+14101.txt (rollno, 14101)
+(group members, [14161,14135])
+#
+14135.txt (rollno, 14135)
+(group members, [14161,14101])
+#
+14161.txt (rollno, 14161)
+(group members, [14135,14101])
+#
+15159.txt (Rollno,<15159>)
+(Group members = 2,[<15159,15136>])
+#
+15136.txt (Rollno,<15136>)
+(Group members = 2,[<15136,15159>])
+#
+13119.txt   (rollno, 13119)
+  (group members, [13119,14103,14139])
+#
+14103.txt   rollno, 14103)
+  (group members, [13119,14103,14139])
+#
+14139.txt   rollno, 14139)
+  (group members, [13119,14103,14139])
+#
+15216.txt Rollno       : 15216
+Group members: 15156,15160
+#
+15156.txt rollno       :15156
+group members: 15216,15160
+#
+15160.txt Rollno       : 15160
+GroupMembers : 15156,15216.
+#
+14153.txt (roll number,14153)
+(group member,)
+#
+14126.txt (rollno, 14126)
+(group member, [14153])
+#
+14136.txt rollno: 14136
+#
+15131.txt (rollno , 15131)
+(group members, rollno , 15105)
+#
+15105.txt (rollno , 15105)
+(group members, rollno , 15131)
+#
+15130.txt (Rollno,<15130>)
+(Group members = 2,[<15130,15146>])
+#
+15146.txt (Rollno,<15146>)
+(Group members = 2,[<15146,15130>])
+#
+15109.txt 15109
+15137
+#
+15123.txt rollno ,15123
+group member ,[15105]
+#
+15104.txt rollno ,15104
+group member ,[15123]
+#
+15106.txt [
+  (rollno,15106)
+  (group members,[15206])
